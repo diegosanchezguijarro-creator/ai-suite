@@ -1,0 +1,31 @@
+appId: ai.suite.desktop
+productName: AI Suite
+copyright: Copyright (c) 2026 Diego Sanchez Guijarro
+directories:
+  output: release
+  buildResources: build
+files:
+  - src/**/*
+  - docs/**/*
+  - apps/**/*
+  - "!**/node_modules/{test,__tests__,tests,example,examples,docs}/**"
+  - "!**/node_modules/**/{CHANGELOG.md,README.md,readme.md,LICENSE}"
+  - "!**/.env"
+  - "!**/.git*"
+  - "!**/package-lock.json"
+  - "package.json"
+asar: false
+win:
+  icon: build/icon.ico
+  target:
+    - nsis
+    - portable
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  artifactName: AI-Suite-Setup-${version}.${ext}
+  shortcutName: AI Suite
+portable:
+  artifactName: AI-Suite-Portable-${version}.exe
+npmRebuild: false

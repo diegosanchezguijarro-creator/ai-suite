@@ -1,0 +1,22 @@
+{
+  "name": "ai-orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "lint": "node scripts/lint.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

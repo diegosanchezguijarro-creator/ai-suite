@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Suite · Launcher</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dash">
+    <header class="dash-header">
+      <div>
+        <h1>AI Suite</h1>
+        <p class="subtitle">Local orchestrator + chat interface control center</p>
+      </div>
+      <div class="header-actions">
+        <button id="btn-settings" class="btn ghost">Settings</button>
+        <a id="link-repo" class="btn ghost" href="https://github.com/diegosanchezguijarro-creator/ai-suite" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Orchestrator card -->
+      <div class="card" id="card-orchestrator">
+        <div class="card-head">
+          <h2>Orchestrator</h2>
+          <span class="status-dot unknown" data-status-dot="orchestrator"></span>
+        </div>
+        <p class="service-desc">6-layer AI pipeline: routes, plans, runs parallel analysis, verifies drafts.</p>
+        <div class="meta"><span data-meta="orchestrator-port">8788</span></div>
+        <div class="card-actions">
+          <button class="btn primary" data-action="start" data-id="orchestrator">Start</button>
+          <button class="btn danger" data-action="stop" data-id="orchestrator" disabled>Stop</button>
+          <a class="btn ghost" data-link="orchestratorHealth" target="_blank" rel="noreferrer">Health</a>
+        </div>
+        <div class="logs" id="logs-orchestrator"></div>
+      </div>
+
+      <!-- Chat card -->
+      <div class="card" id="card-chat">
+        <div class="card-head">
+          <h2>AI Chat Interface</h2>
+          <span class="status-dot unknown" data-status-dot="chat"></span>
+        </div>
+        <p class="service-desc">Streaming chat web app with files, images, markdown, and backend panel.</p>
+        <div class="meta"><span data-meta="chat-port">8787</span></div>
+        <div class="card-actions">
+          <button class="btn primary" data-action="start" data-id="chat">Start</button>
+          <button class="btn danger" data-action="stop" data-id="chat" disabled>Stop</button>
+          <a class="btn ghost" data-link="chat" target="_blank" rel="noreferrer">Open Chat</a>
+        </div>
+        <div class="logs" id="logs-chat"></div>
+      </div>
+
+      <!-- Docs card -->
+      <div class="card docs-card">
+        <div class="card-head"><h2>Docs</h2></div>
+        <p class="service-desc">How to install, configure, and use AI Suite.</p>
+        <div id="docs-links" class="doc-links"></div>
+      </div>
+    </div>
+
+    <!-- Settings modal -->
+    <div class="modal-scrim" id="settings-modal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Settings">
+        <div class="modal-head">
+          <h2>Settings</h2>
+          <button class="icon-btn" id="btn-close-settings" aria-label="Close settings">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="hint">Values are saved to <code>settings.json</code> in your user data folder and passed to the services. Secrets are shown masked.</p>
+          <div id="ports-fields" class="fields"></div>
+          <div class="fields" id="env-fields"></div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn ghost" id="btn-cancel-settings">Cancel</button>
+          <button class="btn primary" id="btn-save-settings">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
