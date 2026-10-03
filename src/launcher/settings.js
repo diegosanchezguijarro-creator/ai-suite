@@ -28,8 +28,8 @@ export function resolveDataDir(explicit) {
 
 export class Settings {
   constructor(dataDir) {
-    this.dataDir = dataDir
-    this.file = path.join(dataDir, 'settings.json')
+    this.dataDir = resolveDataDir(dataDir)
+    this.file = path.join(this.dataDir, 'settings.json')
     this.settings = { ...DEFAULTS }
     this.load()
   }

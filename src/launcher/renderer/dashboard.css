@@ -121,6 +121,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   z-index: 50;
 }
+.modal-scrim[hidden] { display: none; }
 .modal {
   background: var(--surface);
   border: 1px solid var(--border);

@@ -1,7 +1,7 @@
 {
   "name": "ai-suite",
   "productName": "AI Suite",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local AI suite: orchestrator backend + chat interface + launcher dashboard",
   "author": "Diego Sanchez Guijarro",
   "license": "MIT",
